@@ -61,20 +61,48 @@ mes recommandations sont les suivantes :
 <a name="enonce-du-probleme"></a>
 ## 🎯 Énoncé du Problème spécifique ( SMART ) avec le client
 
-Description détaillée du problème SMART avec le client.
+Sur la base de mes recommandations, Gala Groceries souhaite se concentrer sur l'énoncé du problème suivant :
+
+"Pouvons-nous estimer avec précision les niveaux de stock des produits sur la base des données de vente et des données des capteurs sur une période  afin de nous approvisionner de manière plus intelligente auprès de nos fournisseurs ?"  
 
 <a name="les-donnees"></a>
 ## 📊 Les Données
 
-Explication sur les données utilisées pour le projet.
+Gala Groceries a mis à disposition:
+
+<img src="/img/data_model.PNG"  /> 
+
+
+- Les données de ventes 
+- Les données de capteurs : Les capteurs  mesure la température des locaux de stockage où les produits sont conservés dans l'entrepôt.
+- Les données sur le niveau de stockage  dans les réfrigérateurs et les congélateurs du magasin. Ces niveaux de stockage sont estimés par ces capteurs IoT.
 
 <a name="plan-du-projet-data"></a>
 ## 🗺️ Plan du Projet Data
 
-Présentation du plan et de la méthodologie du projet.
+- Préparation des données : Il est question pour nous de nettoyer, fusionner et gérer les données manquantes.
+- Feature engineering : Créer les nouvelles variables et transformer certaines variables pour  préparer la phase de modélisation ([Feature engineering.ipynb](/feature_Ingineering.ipynb) ).
+- Construire les modèles de machine learning : Nous allons prédire les niveaux de stock des produits  en fonction des données de vente et des données de température de stockages et horaires ([Modelisation.ipynb](/Modelisation.ipynb)). 
+- Evaluation du modèles et interprétations : Métriques de mesure de performance
+- Préparation du powerpoint et présentation des résultats au client
+
+
 
 <a name="resultats"></a>
 ## 📈 Résultats
 
-Affichage des résultats obtenus avec des graphiques et analyses.
+-  **Échantillon de données faibles**
+
+Une précision d'environ 50% a été obtenue avec notre modèle de Random Forest. Pour tester ce modèle en production, nous avons besoin d'échantillons plus importants.
+
+- **Le prix est important**
+
+Le prix était une caractéristique importante dans le modèle de prédiction du stock.
+Existe-t-il d'autres caractéristiques sur les produits que nous pouvons utiliser pour les inclure dans le modèle? 
+
+- **S'appuyer sur l'IoT**
+  
+La température était également significative dans le modèle de prédiction du stock. Avec plus de données IoT sur une période plus longue, nous pensons que la précision de ce modèle augmentera. Cela ouvre également des sources de données, telles que la météo.
+
+
 
